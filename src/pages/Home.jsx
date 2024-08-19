@@ -2,7 +2,7 @@ const Home = () => {
 
   return (
     <>
-    <div className="Home">Home</div>
+    <div className="Home size-12">Home</div>
     </>
   )
 }
