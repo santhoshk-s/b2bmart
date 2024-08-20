@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaBars, FaTimes, FaBell, FaHome, FaList, FaEdit, FaEnvelope, FaBox, FaHeart, FaShoppingCart, FaShieldAlt, FaFileAlt } from 'react-icons/fa'; 
+ import { FaBars, FaTimes, FaBell, FaHome, FaList, FaEdit, FaEnvelope, FaBox, FaHeart, FaShoppingCart, FaShieldAlt, FaFileAlt } from 'react-icons/fa'; 
 import {View} from './alt/View'
 import {Text} from './alt/Text'
 
