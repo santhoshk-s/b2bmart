@@ -13,6 +13,7 @@ import { C6 } from './pages/C6';
 import { C7 } from './pages/C7';
 import { EditUser } from './pages/EditUser';
 import { C8 } from './pages/C8';
+import Shopping from './pages/Shopping';
 function App() {
   const user = true
 
@@ -25,6 +26,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path='/categories' element={<Categories/>} />
+        <Route path='/shopping' element={<Shopping/>} />
+        <Route path="/shopping/:productId" element={<Shopping/>} />
         <Route path='/c1' element={<C1/>} />
         <Route path='/c2' element={<C2/>} />
         <Route path='/c3' element={<C3/>} />

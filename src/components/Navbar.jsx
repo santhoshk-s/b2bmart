@@ -1,26 +1,9 @@
 import { useState } from "react";
- import { FaBars, FaTimes, FaBell, FaHome, FaList, FaEdit, FaEnvelope, FaBox, FaHeart, FaShoppingCart, FaShieldAlt, FaFileAlt } from 'react-icons/fa'; 
+ import { FaBars, FaTimes, FaBell, FaHome, FaList, FaEdit, FaEnvelope, FaBox, FaHeart, FaShoppingCart, FaShieldAlt, FaFileAlt,FaSearch } from 'react-icons/fa'; 
 import {View} from './alt/View'
 import {Text} from './alt/Text'
-import {
-  FaBars,
-  FaTimes,
-  FaBell,
-  FaHome,
-  FaList,
-  FaEdit,
-  FaEnvelope,
-  FaBox,
-  FaHeart,
-  FaShoppingCart,
-  FaShieldAlt,
-  FaFileAlt,
-  FaSearch,
-} from "react-icons/fa";
 import { AiFillEdit } from "react-icons/ai";
 import { IoPerson } from "react-icons/io5";
-import { View } from "./alt/View";
-import { Text } from "./alt/Text";
 import { TextInput } from "./alt/TextInput";
 import { Link } from "react-router-dom";
 
