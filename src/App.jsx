@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import Register from './pages/Register';
+import Welcome from './pages/Welcome';
 import { Categories } from './pages/Categories';
 import { C1 } from './pages/C1';
 import { C2 } from './pages/C2';
@@ -10,6 +11,7 @@ import { C4 } from './pages/C4';
 import { C5 } from './pages/C5';
 import { C6 } from './pages/C6';
 import { C7 } from './pages/C7';
+import { EditUser } from './pages/EditUser';
 import { C8 } from './pages/C8';
 function App() {
   const user = true
@@ -31,6 +33,8 @@ function App() {
         <Route path='/c6' element={<C6/>} />
         <Route path='/c7' element={<C7/>} />
         <Route path='/c8' element={<C8/>} />
+        <Route path='/edit' element={<EditUser/>} />
+      
       </Routes>
     </Router>
     </>
