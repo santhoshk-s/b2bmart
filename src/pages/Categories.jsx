@@ -16,7 +16,7 @@ export const Categories = () => {
     <p className='p-2 font-bold text-center pt-2 text-white'>All Categories</p>
     <div className='pb-2'>
        
-    <input className=' w-full rounded-xl  p-2 ml-3 mr-4' type="text"  placeholder='Search For Products & Services'/>
+    <input className=' w-11/12 rounded-xl  p-2 ml-3 mr-4' type="text"  placeholder='Search For Products & Services'/>
     
     </div>
 </div>

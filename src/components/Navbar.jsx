@@ -1,4 +1,7 @@
 import { useState } from "react";
+ import { FaBars, FaTimes, FaBell, FaHome, FaList, FaEdit, FaEnvelope, FaBox, FaHeart, FaShoppingCart, FaShieldAlt, FaFileAlt } from 'react-icons/fa'; 
+import {View} from './alt/View'
+import {Text} from './alt/Text'
 import {
   FaBars,
   FaTimes,
@@ -20,7 +23,6 @@ import { View } from "./alt/View";
 import { Text } from "./alt/Text";
 import { TextInput } from "./alt/TextInput";
 import { Link } from "react-router-dom";
-
 
 const NavBar = () => {
   const [navOpen, setNavOpen] = useState(false);

@@ -14,10 +14,11 @@ export const C2 = () => {
     <>
 
 <div className='bg-green-500'> 
-    <p className='p-2 font-bold text-center pt-2 text-white'>Consumer Electronics Appliances</p>
+  <Link to="/categories"><p className='p-2'> back</p></Link>
+    <p className='p-2 font-bold text-center pt-2 text-white'>  Consumer Electronics Appliances</p>
     <div className='pb-2'>
        
-    <input className=' w-full rounded-xl  p-2 ml-3 mr-4' type="text"  placeholder='Search For Products & Services'/>
+    <input className=' w-11/12 rounded-xl  p-2 ml-3 mr-4' type="text"  placeholder='Search For Products & Services'/>
     
     </div>
 </div>
@@ -26,14 +27,27 @@ export const C2 = () => {
   <div className='text-center p-5'>
     
     <img src={ind} alt="" />
-    <p className='font-semibold'>Machines & Equipments</p>
+    <p className='font-semibold'>Industrial Machinery</p>
   </div>
   </Link>
   
   <div className='text-center p-5' > <img src={c2} alt="" />
-  <p className='font-semibold'>Textile And Garment Machines</p></div>
+  <p className='font-semibold'>SPM Machine</p></div>
   <div className='text-center p-5' ><img src={c3} alt="" />
-  <p className='font-semibold'>Control Equipments</p></div>
+  <p className='font-semibold'>Footwear Machinery </p></div>
+  <div className='text-center p-5' ><img src={c3} alt="" />
+  <p className='font-semibold'>Industrial Washing </p></div>
+  <div className='text-center p-5' ><img src={c3} alt="" />
+  <p className='font-semibold'>Industrial Oil Filter Machine</p></div>
+  
+  <div className='text-center p-5' ><img src={c3} alt="" />
+  <p className='font-semibold'>Assebly Equipments </p></div>
+  
+  <div className='text-center p-5' ><img src={c3} alt="" />
+  <p className='font-semibold'>Tape Making Machine </p></div>
+  <div className='text-center p-5' ><img src={c3} alt="" />
+  <p className='font-semibold'>Glass Machinery </p></div>
+  
 
   
 
