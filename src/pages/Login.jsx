@@ -51,9 +51,9 @@ const Login = () => {
           </View>
           <Text className="text-center text-gray-600 text-sm mt-6">
             Don't have an account?{" "}
-            <a href="/register" className="text-blue-500 hover:underline">
+            <Link to="/register" className="text-blue-500 hover:underline">
               Sign up
-            </a>
+            </Link>
           </Text>
           <Link to="/home">
             <button
