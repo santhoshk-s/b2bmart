@@ -93,9 +93,9 @@ const Register = () => {
           </View>
           <Text className="text-center text-gray-600 text-sm mt-3">
             Already have an account?{" "}
-            <a href="/login" className="text-blue-500 hover:underline">
+            <Link to="/login" className="text-blue-500 hover:underline">
               Login
-            </a>
+            </Link>
           </Text>
           <Link to="/login">
             <button
