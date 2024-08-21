@@ -18,12 +18,14 @@ import Messages from './pages/Messages';
 import Chat from './pages/Chat';
 import Payments from './pages/Payments';
 import PaymentsDetailsPage from './pages/PaymentDetails';
+import { AuthProvider } from './provider/AuthProvider';
 function App() {
   const user = true
 
   return (
     <>
-     <Router>
+    <AuthProvider>
+    
       <Routes>
         <Route path="/" element={<Welcome/>} />
         <Route path="/home" element={user?<Home />:<Login/>} />
@@ -47,7 +49,8 @@ function App() {
         <Route path="/messages/:userId" element={<Chat />} />
       
       </Routes>
-    </Router>
+   
+    </AuthProvider>
     </>
   )
 }
