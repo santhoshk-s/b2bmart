@@ -14,6 +14,9 @@ import { C7 } from './pages/C7';
 import { EditUser } from './pages/EditUser';
 import { C8 } from './pages/C8';
 import Shopping from './pages/Shopping';
+import Messages from './pages/Messages';
+import Chat from './pages/Chat';
+import Payments from './pages/Payments';
 function App() {
   const user = true
 
@@ -37,6 +40,9 @@ function App() {
         <Route path='/c7' element={<C7/>} />
         <Route path='/c8' element={<C8/>} />
         <Route path='/edit' element={<EditUser/>} />
+        <Route path='/messages' element={<Messages />} />
+        <Route path='/payments' element={<Payments />} />
+        <Route path="/messages/:userId" element={<Chat />} />
       
       </Routes>
     </Router>

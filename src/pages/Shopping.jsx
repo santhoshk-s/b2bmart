@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import products from "../components/ProductList"; // Adjust the path as needed
+import products from "../components/data/ProductList"; // Adjust the path as needed
 import NavBar from "../components/Navbar";
 import { FaStar } from "react-icons/fa6";
 import Modal from "react-modal";
@@ -41,7 +41,12 @@ const Shopping = () => {
   }
 
   if (!product) {
-    return <View>Product not found</View>;
+    return (
+      <>
+      <NavBar name={"Hello Sai"} back={"home"}/>
+      <View className="mt-16">Product not found</View>
+      </>
+    )
   }
 
   function handleSubmit() {
@@ -58,7 +63,7 @@ const Shopping = () => {
 
   return (
     <>
-      <NavBar />
+      <NavBar name={"Hello Sai"} back={"home"}/>
       <View className="p-6 mt-12">
         <p className="text-gray-600">Relevant Suppliers for you</p>
         <hr className="my-2" />
@@ -97,7 +102,7 @@ const Shopping = () => {
             Contact Seller by adding a few details of your requirements
           </p>
 
-          <form className="space-y-4">
+          <form className="space-y-2">
             <div>
               <label className="block mb-1 font-medium text-gray-700">
                 Quantity:
@@ -136,8 +141,8 @@ const Shopping = () => {
                 Select Fabric:
               </p>
               <div className="grid grid-cols-2 gap-4">
-                <label className="p-4 border rounded-lg shadow-sm hover:shadow-lg transition flex items-center justify-between">
-                  <span className="text-lg font-semibold">Cotton</span>
+                <label className="p-2 border rounded-lg shadow-sm hover:shadow-lg transition flex items-center justify-between">
+                  <span className="text-sm font-semibold">Cotton</span>
                   <input
                     type="radio"
                     name="fabric"
@@ -146,8 +151,8 @@ const Shopping = () => {
                   />
                 </label>
 
-                <label className="p-4 border rounded-lg shadow-sm hover:shadow-lg transition flex items-center justify-between">
-                  <span className="text-lg font-semibold">Silk</span>
+                <label className="p-2 border rounded-lg shadow-sm hover:shadow-lg transition flex items-center justify-between">
+                  <span className="text-sm font-semibold">Silk</span>
                   <input
                     type="radio"
                     name="fabric"
@@ -156,8 +161,8 @@ const Shopping = () => {
                   />
                 </label>
 
-                <label className="p-4 border rounded-lg shadow-sm hover:shadow-lg transition flex items-center justify-between">
-                  <span className="text-lg font-semibold">Wool</span>
+                <label className="p-2 border rounded-lg shadow-sm hover:shadow-lg transition flex items-center justify-between">
+                  <span className="text-sm font-semibold">Wool</span>
                   <input
                     type="radio"
                     name="fabric"
@@ -166,8 +171,8 @@ const Shopping = () => {
                   />
                 </label>
 
-                <label className="p-4 border rounded-lg shadow-sm hover:shadow-lg transition flex items-center justify-between">
-                  <span className="text-lg font-semibold">Rayon</span>
+                <label className="p-2 border rounded-lg shadow-sm hover:shadow-lg transition flex items-center justify-between">
+                  <span className="text-sm font-semibold">Rayon</span>
                   <input
                     type="radio"
                     name="fabric"
@@ -179,14 +184,14 @@ const Shopping = () => {
             </div>
 
             <Button
-              className="w-full py-2 bg-green-400 text-white rounded-lg hover:bg-green-600 transition duration-300"
+              className="w-full py-1 bg-green-400 text-white rounded-lg hover:bg-green-600 transition duration-300"
               onClick={handleSubmit}
               names={"Submit"}
             >
               Submit Request
             </Button>
             <Button
-              className="w-full py-2 bg-gray-400 text-white rounded-lg hover:bg-gray-600 transition duration-300 mt-2"
+              className="w-full py-1 bg-gray-400 text-white rounded-lg hover:bg-gray-600 transition duration-300 mt-2"
               onClick={closeModal}
               names={"Close"}
             >

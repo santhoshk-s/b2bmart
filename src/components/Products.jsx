@@ -1,4 +1,4 @@
-import products from "./ProductList";
+import products from "./data/ProductList";
 import { View } from "./alt/View";
 import { Text } from "./alt/Text";
 import { Image } from "./alt/Image";
