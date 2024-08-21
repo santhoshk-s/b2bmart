@@ -17,6 +17,7 @@ import Shopping from './pages/Shopping';
 import Messages from './pages/Messages';
 import Chat from './pages/Chat';
 import Payments from './pages/Payments';
+import PaymentsDetailsPage from './pages/PaymentDetails';
 function App() {
   const user = true
 
@@ -42,6 +43,7 @@ function App() {
         <Route path='/edit' element={<EditUser/>} />
         <Route path='/messages' element={<Messages />} />
         <Route path='/payments' element={<Payments />} />
+        <Route path='/paymentdata' element={<PaymentsDetailsPage />} />
         <Route path="/messages/:userId" element={<Chat />} />
       
       </Routes>

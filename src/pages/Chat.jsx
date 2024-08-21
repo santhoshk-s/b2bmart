@@ -1,6 +1,6 @@
 // Chat.js
 import { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams ,Link } from 'react-router-dom';
 import { FaSmile, FaPaperPlane } from 'react-icons/fa';
 import users from '../components/data/UsersLists';
 import NavBar from '../components/Navbar';
@@ -11,9 +11,9 @@ const Chat = () => {
   const [chatMessages, setChatMessages] = useState([
     { text: 'Hello! How can I help you today?', sender: 'them' },
     { text: 'I am interested in your product.', sender: 'me' },
-    { text: 'Sure, let me provide you with more details.', sender: 'them' }
+    { text: 'Sure, let me provide you with more details.', sender: 'them' },
+    { text: 'Here is your payment link: https://home/payment', sender: 'them' }
   ]);
-
   const user = users.find(user => user.id === parseInt(userId));
 
   const handleSend = () => {
@@ -21,6 +21,25 @@ const Chat = () => {
       setChatMessages([...chatMessages, { text: message, sender: 'me' }]);
       setMessage('');
     }
+  };
+
+  const renderMessageText = (text) => {
+    const words = text.split(' ');
+    return words.map((word, index) => {
+      if (word.startsWith('http')) {
+        return (
+          <Link
+            key={index}
+            to={"/payments"}
+            rel="noopener noreferrer"
+            className="text-blue-500 underline"
+          >
+            {word}
+          </Link>
+        );
+      }
+      return <span key={index}>{word} </span>;
+    });
   };
 
   return (
@@ -40,7 +59,7 @@ const Chat = () => {
                     msg.sender === 'me' ? 'bg-blue-500 text-white' : 'bg-green-500 text-white'
                   }`}
                 >
-                  {msg.text}
+                  {renderMessageText(msg.text)}
                 </div>
               </div>
             ))}
