@@ -1,4 +1,4 @@
-import categories from './CategoryList'; 
+import categories from './data/CategoryList'; 
 import { View } from "./alt/View";
 import { Text } from "./alt/Text";
 import { Image } from "./alt/Image";

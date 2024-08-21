@@ -1,5 +1,5 @@
 import { useState } from "react";
- import { FaBars, FaTimes, FaBell, FaHome, FaList, FaEdit, FaEnvelope, FaBox, FaHeart, FaShoppingCart, FaShieldAlt, FaFileAlt,FaSearch } from 'react-icons/fa'; 
+ import { FaBars, FaTimes, FaBell, FaHome, FaList, FaEdit, FaEnvelope, FaBox, FaHeart, FaShoppingCart, FaShieldAlt, FaFileAlt,FaSearch,FaChevronLeft } from 'react-icons/fa'; 
 import {View} from './alt/View'
 import {Text} from './alt/Text'
 import { AiFillEdit } from "react-icons/ai";
@@ -7,7 +7,7 @@ import { IoPerson } from "react-icons/io5";
 import { TextInput } from "./alt/TextInput";
 import { Link } from "react-router-dom";
 
-const NavBar = () => {
+const NavBar = ({name, back,isHome}) => {
   const [navOpen, setNavOpen] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
   const toggleNav = () => {
@@ -33,8 +33,11 @@ const NavBar = () => {
           >
             {navOpen ? <FaTimes /> : <FaBars />}
           </button>
-          <View className="ml-4">
-            <Text className="text-lg font-bold">Hello Sai</Text>
+          {isHome?"":<Link to={`/${back}`}>
+          <FaChevronLeft className="absolute  top-10 left-3" />
+          </Link>}
+          <View className="ml-4 flex flex-col">
+            <Text className="text-lg font-bold">{name}</Text>
             {!isFocused && (
               <FaSearch className="absolute text-gray-500 bottom-3 left-12 transition-all duration-1000" />
             )}
