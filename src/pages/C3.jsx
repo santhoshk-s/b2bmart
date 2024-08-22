@@ -10,21 +10,21 @@ export const C3 = () => {
       <NavBar name={"Construction Materials"} back={"categories"} />
 
       <div className="grid gap-4 grid-cols-2 p-4 mt-16">
-        <Link to="/login">
+        <Link to="/industry">
           <div className='text-center p-4 bg-white rounded shadow hover:shadow-lg transition h-48 flex flex-col justify-between'>
             <img src={ind} alt="Machines & Equipments" className='h-24 w-24 mx-auto'/>
             <p className='font-semibold mt-2'>Machines & Equipments</p>
           </div>
         </Link>
 
-        <Link to="/login">
+        <Link to="/industry">
           <div className='text-center p-4 bg-white rounded shadow hover:shadow-lg transition h-48 flex flex-col justify-between'>
             <img src={c2} alt="Textile And Garment Machines" className='h-24 w-24 mx-auto'/>
             <p className='font-semibold mt-2'>Textile And Garment Machines</p>
           </div>
         </Link>
 
-        <Link to="/login">
+        <Link to="/industry">
           <div className='text-center p-4 bg-white rounded shadow hover:shadow-lg transition h-48 flex flex-col justify-between'>
             <img src={c3} alt="Control Equipments" className='h-24 w-24 mx-auto'/>
             <p className='font-semibold mt-2'>Control Equipments</p>

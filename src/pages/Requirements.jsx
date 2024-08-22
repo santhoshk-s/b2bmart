@@ -9,7 +9,10 @@ const RequirementCard = ({ title, postedDate, supplier, additionalDetails, id })
   };
 
   return (
-    <div className="bg-gray-300 shadow-md rounded-lg p-4 relative grid grid-cols-2 gap-2 -z-10">
+    <div className='relative'>
+
+    
+    <div className="bg-gray-300 shadow-md rounded-lg p-4 absolute grid grid-cols-2 gap-2 -z-10">
       {/* Left Column */}
       <div>
         <h2 className="text-sm font-semibold mb-2">{title}</h2>
@@ -35,6 +38,7 @@ const RequirementCard = ({ title, postedDate, supplier, additionalDetails, id })
         {isExpanded ? 'Hide Details' : 'View Details'}
       </button>
     </div>
+    </div>
   );
 };
 
@@ -42,7 +46,7 @@ const Requirements = () => {
   return (
     <>
       <NavBar name={"My Orders"} back={"home"} isOrder={true} />
-      <div className="p-4 mt-16">
+      <div className="p-4 mt-16 mb-1">
         {/* Card Container */}
         <div className="space-y-6">
           {/* Card 1 */}
@@ -52,15 +56,6 @@ const Requirements = () => {
             supplier="ABC Machines Ltd."
             additionalDetails="This machine offers high efficiency, easy maintenance, and energy-saving features."
             id={1}
-          />
-
-          {/* Card 2 */}
-          <RequirementCard
-            title="Industrial Coffee Grinder"
-            postedDate="August 20, 2024"
-            supplier="XYZ Grinders Co."
-            additionalDetails="The grinder features durable construction, adjustable settings, and high performance."
-            id={2}
           />
         </div>
       </div>

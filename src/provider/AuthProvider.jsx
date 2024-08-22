@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { Backend_url } from '../constant';
@@ -26,12 +26,8 @@ export const AuthProvider = ({ children }) => {
       setRole(user.role);
 
       // Redirect based on user role
-      if (user.role === 'user') {
+      if (user.role === 'user' || user.role ==='admin') {
         navigate('/home');
-      } else if (user.role === 'admin') {
-        navigate('/admin-dashboard');
-      } else {
-        navigate('/user-dashboard');
       }
     } catch (error) {
       console.error('Login failed', error);

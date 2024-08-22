@@ -10,7 +10,7 @@ export const C8 = () => {
       <NavBar name={"Sports Materials"} back={"categories"} />
 
       <div className="grid gap-4 grid-cols-2 p-4 mt-16">
-        <Link to="/login">
+        <Link to="/industry">
           <div className='text-center p-4 h-44 bg-white rounded shadow hover:shadow-lg transition'>
             <img src={ind} alt="Cycles" className='h-24 w-full object-cover rounded-lg mb-2' />
             <p className='font-semibold text-sm'>Cycles</p>

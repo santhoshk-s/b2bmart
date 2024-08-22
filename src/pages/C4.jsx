@@ -12,7 +12,7 @@ export const C4 = () => {
 
       {/* Grid Layout */}
       <div className="grid gap-x-4 gap-y-4 grid-cols-2 p-4 mt-16">
-        <Link to="/login">
+        <Link to="/industry">
           <div className='text-center h-44 p-2 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300'>
             <img src={ind} alt="T Shirt" className="w-full h-24 object-cover rounded-lg mb-2" />
             <p className='font-semibold text-sm'>T Shirt</p>

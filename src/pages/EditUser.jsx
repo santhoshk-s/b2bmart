@@ -79,6 +79,7 @@ export const EditUser = () => {
                 'Content-Type': 'multipart/form-data',
             },
         });
+        console.log(response)
         Swal.fire({
           icon: "success",
           title: "Profile updated Success",
