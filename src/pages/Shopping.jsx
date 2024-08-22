@@ -7,6 +7,7 @@ import { useState } from "react";
 import { Button } from "../components/alt/Button";
 import { View } from "../components/alt/View";
 import Swal from 'sweetalert2'
+import Product from '../components/Products'
 
 const customStyles = {
   content: {
@@ -44,7 +45,7 @@ const Shopping = () => {
     return (
       <>
       <NavBar name={"Hello Sai"} back={"home"}/>
-      <View className="mt-16">Product not found</View>
+      <Product/>
       </>
     )
   }

@@ -23,6 +23,17 @@ import Notifications from './pages/Notifications';
 import Myorders from './pages/Myorders';
 import Requirements from './pages/Requirements';
 import Profile from './pages/Profile';
+import {View1} from './pages/View1'
+import {View2} from './pages/View2'
+import {Seller} from './pages/Seller'
+import {Seller1} from './pages/Seller1'
+import {History} from './pages/History'
+import {His1} from './pages/His1'
+import {Ship} from './pages/Ship'
+import TermsAndConditions from './pages/TermsAndConditions';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import Industry from "./pages/Industry"
+
 function App() {
   const user = true
 
@@ -55,6 +66,16 @@ function App() {
         <Route path='/myorders' element={<Myorders />} />
         <Route path='/requirements' element={<Requirements />} />
         <Route path="/messages/:userId" element={<Chat />} />
+        <Route path='/view1' element={<View1/>} />
+        <Route path='/view2' element={<View2/>} />
+        <Route path='/sell' element={<Seller/>} />
+        <Route path='/sell1' element={<Seller1/>} />
+        <Route path='/his' element={<History/>} />
+        <Route path='/his1' element={<His1 />} />
+        <Route path="/ship" element={<Ship/>} />
+        <Route path="/terms-conditions" element={<TermsAndConditions />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/industry" element={<Industry />} />
       
       </Routes>
    

@@ -26,7 +26,7 @@ export const C2 = () => {
       <NavBar name={"Electronics Appliances"} back={"categories"} />
       <div className="grid gap-x-4 gap-y-2 grid-cols-2 mt-16 p-2">
         {categories.map((category, index) => (
-          <Link to="/login" key={index}>
+          <Link to="/industry" key={index}>
             <div className="bg-white shadow-md rounded-lg p-3 flex flex-col items-center h-44 w-full">
               <img src={category.img} alt={category.text} className="h-20 w-20 object-contain mb-2" />
               <p className="text-sm font-medium text-center">{category.text}</p>

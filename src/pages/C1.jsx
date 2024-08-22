@@ -15,14 +15,14 @@ export const C1 = () => {
       <NavBar name={"Industrial Plants"} back={"categories"} />
       <div className="grid gap-x-4 gap-y-2 grid-cols-2 mt-16 p-2">
         {[
-          { img: m1, text: "Machines & Equipments", link: "/login" },
-          { img: m2, text: "Textile And Garment Machines", link: "/login" },
-          { img: m3, text: "Control Equipments", link: "/login" },
-          { img: m4, text: "Printing Machinery", link: "/login" },
-          { img: m5, text: "Used Machinery & Tools", link: "/login" },
-          { img: m6, text: "Paper Work & Making Machine", link: "/login" },
-          { img: m7, text: "Digital Printers", link: "/login" },
-          { img: m8, text: "Rolling Machines", link: "/login" },
+          { img: m1, text: "Machines & Equipments", link: "/industry" },
+          { img: m2, text: "Textile And Garment Machines", link: "/industry" },
+          { img: m3, text: "Control Equipments", link: "/industry" },
+          { img: m4, text: "Printing Machinery", link: "/industry" },
+          { img: m5, text: "Used Machinery & Tools", link: "/industry" },
+          { img: m6, text: "Paper Work & Making Machine", link: "/industry" },
+          { img: m7, text: "Digital Printers", link: "/industry" },
+          { img: m8, text: "Rolling Machines", link: "/industry" },
         ].map((category, index) => (
           <Link to={category.link} key={index}>
             <div className="bg-white shadow-md rounded-lg p-3 flex flex-col items-center h-48 w-full">
