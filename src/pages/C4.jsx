@@ -1,46 +1,32 @@
-import React from 'react'
-import {Link} from "react-router-dom";
-import ind from "../assets/indus.png"
+import { Link } from "react-router-dom";
+import ind from "../assets/indus.png";
 import c2 from "../assets/c2.png";
-import c3 from "../assets/c3.jpg"
-import c4 from "../assets/c4.jpg"
-import c5 from "../assets/c5.jpg"
-import c6 from "../assets/c6.jpg"
-import c7 from "../assets/c7.jpg"
-import c8 from "../assets/c8.jpg";
+import c3 from "../assets/c3.jpg";
+import NavBar from '../components/Navbar';
 
 export const C4 = () => {
   return (
     <>
-
-<div className='bg-green-500'> 
-<Link to="/categories"><p className='p-2'> back</p></Link>
-    <p className='p-2 font-bold text-center pt-2 text-white'>Clothing And Garments</p>
-    <div className='pb-2'>
-       
-    <input className=' w-11/12 rounded-xl  p-2 ml-3 mr-4' type="text"  placeholder='Search For Products & Services'/>
-    
-    </div>
-</div>
-    <div className="grid gap-x-8 gap-y-4 grid-cols-2">
-    <Link to="/login">
-  <div className='text-center p-5'>
-    
-    <img src={ind} alt="" />
-    <p className='font-semibold'>T Shirt</p>
-  </div>
-  </Link>
-  
-  <div className='text-center p-5' > <img src={c2} alt="" />
-  <p className='font-semibold'>Textile And Garment Machines</p></div>
-  <div className='text-center p-5' ><img src={c3} alt="" />
-  <p className='font-semibold'>Control Equipments</p></div>
-
-  
+      <NavBar name={"Clothing And Garments"} back={"categories"} />
 
 
-  
-</div>
-</>
-  )
-}
+      {/* Grid Layout */}
+      <div className="grid gap-x-4 gap-y-4 grid-cols-2 p-4 mt-16">
+        <Link to="/login">
+          <div className='text-center h-44 p-2 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300'>
+            <img src={ind} alt="T Shirt" className="w-full h-24 object-cover rounded-lg mb-2" />
+            <p className='font-semibold text-sm'>T Shirt</p>
+          </div>
+        </Link>
+        <div className='text-center h-44 p-2 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300'>
+          <img src={c2} alt="Textile And Garment Machines" className="w-full h-24 object-cover rounded-lg mb-2" />
+          <p className='font-semibold text-sm'>Textile And Garment Machines</p>
+        </div>
+        <div className='text-center h-44 p-2 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300'>
+          <img src={c3} alt="Control Equipments" className="w-full h-24 object-cover rounded-lg mb-2" />
+          <p className='font-semibold text-sm'>Control Equipments</p>
+        </div>
+      </div>
+    </>
+  );
+};

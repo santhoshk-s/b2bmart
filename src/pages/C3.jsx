@@ -1,46 +1,36 @@
-import React from 'react'
-import {Link} from "react-router-dom";
-import ind from "../assets/indus.png"
+import { Link } from "react-router-dom";
+import ind from "../assets/indus.png";
 import c2 from "../assets/c2.png";
-import c3 from "../assets/c3.jpg"
-import c4 from "../assets/c4.jpg"
-import c5 from "../assets/c5.jpg"
-import c6 from "../assets/c6.jpg"
-import c7 from "../assets/c7.jpg"
-import c8 from "../assets/c8.jpg";
+import c3 from "../assets/c3.jpg";
+import NavBar from '../components/Navbar';
 
 export const C3 = () => {
   return (
     <>
+      <NavBar name={"Construction Materials"} back={"categories"} />
 
-<div className='bg-green-500'> 
-<Link to="/categories"><p className='p-2'> back</p></Link>
-    <p className='p-2 font-bold text-center pt-2 text-white'>Building and Construction Materials</p>
-    <div className='pb-2'>
-       
-    <input className=' w-11/12 rounded-xl  p-2 ml-3 mr-4' type="text"  placeholder='Search For Products & Services'/>
-    
-    </div>
-</div>
-    <div className="grid gap-x-8 gap-y-4 grid-cols-2">
-    <Link to="/login">
-  <div className='text-center p-5'>
-    
-    <img src={ind} alt="" />
-    <p className='font-semibold'>Machines & Equipments</p>
-  </div>
-  </Link>
-  
-  <div className='text-center p-5' > <img src={c2} alt="" />
-  <p className='font-semibold'>Textile And Garment Machines</p></div>
-  <div className='text-center p-5' ><img src={c3} alt="" />
-  <p className='font-semibold'>Control Equipments</p></div>
+      <div className="grid gap-4 grid-cols-2 p-4 mt-16">
+        <Link to="/login">
+          <div className='text-center p-4 bg-white rounded shadow hover:shadow-lg transition h-48 flex flex-col justify-between'>
+            <img src={ind} alt="Machines & Equipments" className='h-24 w-24 mx-auto'/>
+            <p className='font-semibold mt-2'>Machines & Equipments</p>
+          </div>
+        </Link>
 
-  
+        <Link to="/login">
+          <div className='text-center p-4 bg-white rounded shadow hover:shadow-lg transition h-48 flex flex-col justify-between'>
+            <img src={c2} alt="Textile And Garment Machines" className='h-24 w-24 mx-auto'/>
+            <p className='font-semibold mt-2'>Textile And Garment Machines</p>
+          </div>
+        </Link>
 
-
-  
-</div>
-</>
-  )
-}
+        <Link to="/login">
+          <div className='text-center p-4 bg-white rounded shadow hover:shadow-lg transition h-48 flex flex-col justify-between'>
+            <img src={c3} alt="Control Equipments" className='h-24 w-24 mx-auto'/>
+            <p className='font-semibold mt-2'>Control Equipments</p>
+          </div>
+        </Link>
+      </div>
+    </>
+  );
+};
