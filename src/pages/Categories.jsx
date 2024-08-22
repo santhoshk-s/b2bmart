@@ -8,69 +8,29 @@ import c6 from "../assets/c6.jpg";
 import c7 from "../assets/c7.jpg";
 import c8 from "../assets/c8.jpg";
 import NavBar from "../components/Navbar";
+
 export const Categories = () => {
   return (
     <>
-    <NavBar name={"Categories"} back={"home"}/>
-      <div className="grid gap-x-8 gap-y-4 grid-cols-2 mt-16">
-        <Link to="/c1">
-          <div className="text-center p-5">
-            <img src={ind} alt="" />
-            <p className="font-semibold">
-              Industrial Plants, Machinery & Equipments
-            </p>
-          </div>
-        </Link>
-        <Link to="/c2">
-          <div className="text-center p-5">
-            {" "}
-            <img src={c2} alt="" />
-            <p className="font-semibold">
-              Customer Electronics and household applications
-            </p>
-          </div>
-        </Link>
-        <Link to="/c3">
-          <div className="text-center p-5">
-            <img src={c3} alt="" />
-            <p className="font-semibold">building and Construction Materials</p>
-          </div>
-        </Link>
-        <Link to="/c4">
-          <div className="text-center p-5">
-            {" "}
-            <img src={c4} alt="" />
-            <p className="font-semibold">Clothing And Garments</p>
-          </div>
-        </Link>
-        <Link to="/c5">
-          <div className="text-center p-5">
-            {" "}
-            <img src={c5} alt="" />
-            <p className="font-semibold">Medical And Consultancy Services</p>
-          </div>
-        </Link>
-        <Link to="/c6">
-          <div className="text-center p-5">
-            {" "}
-            <img src={c6} alt="" />
-            <p className="font-semibold">Medicines And Aayurvedha</p>
-          </div>
-        </Link>
-        <Link to="/c7">
-          <div className="text-center p-5">
-            {" "}
-            <img src={c7} alt="" />
-            <p className="font-semibold">Bicycles and Many More</p>
-          </div>
-        </Link>
-        <Link to="/c8">
-          <div className="text-center p-5">
-            {" "}
-            <img src={c8} alt="" />
-            <p className="font-semibold">Sports Material And Equipments</p>
-          </div>
-        </Link>
+      <NavBar name={"Categories"} back={"home"} />
+      <div className="grid gap-x-4 gap-y-2 grid-cols-2 mt-16 p-2">
+        {[
+          { img: ind, text: "Industrial Plants, Machinery & Equipments", link: "/c1" },
+          { img: c2, text: "Customer Electronics and Household Applications", link: "/c2" },
+          { img: c3, text: "Building and Construction Materials", link: "/c3" },
+          { img: c4, text: "Clothing And Garments", link: "/c4" },
+          { img: c5, text: "Medical And Consultancy Services", link: "/c5" },
+          { img: c6, text: "Medicines And Ayurvedha", link: "/c6" },
+          { img: c7, text: "Bicycles and Many More", link: "/c7" },
+          { img: c8, text: "Sports Material And Equipments", link: "/c8" },
+        ].map((category, index) => (
+          <Link to={category.link} key={index}>
+            <div className="bg-white shadow-md rounded-lg p-3 flex flex-col items-center h-48 w-full">
+              <img src={category.img} alt="" className="h-20 w-20 object-contain mb-2" />
+              <p className="text-sm font-medium text-center">{category.text}</p>
+            </div>
+          </Link>
+        ))}
       </div>
     </>
   );

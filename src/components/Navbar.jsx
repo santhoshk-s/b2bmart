@@ -1,13 +1,29 @@
 import { useState } from "react";
- import { FaBars, FaTimes, FaBell, FaHome, FaList, FaEdit, FaEnvelope, FaBox, FaHeart, FaShoppingCart, FaShieldAlt, FaFileAlt,FaSearch,FaChevronLeft } from 'react-icons/fa'; 
-import {View} from './alt/View'
-import {Text} from './alt/Text'
+import {
+  FaBars,
+  FaTimes,
+  FaBell,
+  FaHome,
+  FaList,
+  FaEdit,
+  FaEnvelope,
+  FaBox,
+  FaHeart,
+  FaShoppingCart,
+  FaShieldAlt,
+  FaFileAlt,
+  FaSearch,
+  FaChevronLeft,
+} from "react-icons/fa";
+import { View } from "./alt/View";
+import { Text } from "./alt/Text";
 import { AiFillEdit } from "react-icons/ai";
 import { IoPerson } from "react-icons/io5";
 import { TextInput } from "./alt/TextInput";
 import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-const NavBar = ({name, back,isHome}) => {
+const NavBar = ({ name, back, isHome, isOrder }) => {
   const [navOpen, setNavOpen] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
   const toggleNav = () => {
@@ -33,25 +49,59 @@ const NavBar = ({name, back,isHome}) => {
           >
             {navOpen ? <FaTimes /> : <FaBars />}
           </button>
-          {isHome?"":<Link to={`/${back}`}>
-          <FaChevronLeft className="absolute  top-10 left-3" />
-          </Link>}
-          <View className="ml-4 flex flex-col">
-            <Text className="text-lg font-bold">{name}</Text>
-            {!isFocused && (
-              <FaSearch className="absolute text-gray-500 bottom-3 left-12 transition-all duration-1000" />
-            )}
-            <TextInput
-              type="text"
-              placeholder="Search..."
-              className=" p-1 pl-7 w-56 text-black rounded-md focus:outline-none focus:ring-0"
-              onFocus={handleFocus}
-              onBlur={handleBlur}
-            />
-          </View>
+          {isHome ? (
+            ""
+          ) : (
+            <Link to={`/${back}`}>
+              <FaChevronLeft className="absolute z-50  top-10 left-3" />
+            </Link>
+          )}
+          {isOrder ? (
+            <nav className="bg-green-400 w-auto text-white h-16">
+              <h1 className="font-bold relative left-4 text-lg">My orders</h1>
+              <div className="relative right-4 flex items-center justify-between font-bold h-full w-svw">
+                <NavLink
+                  to="/requirements"
+                  className={({ isActive }) =>
+                    `relative py-2 mb-2 pl-10 text-center ${
+                      isActive ? "underline underline-offset-2" : ""
+                    }`
+                  }
+                >
+                  Requirements
+                </NavLink>
+                <NavLink
+                  to="/myorders"
+                  className={({ isActive }) =>
+                    `relative py-2 mb-2 pr-14 w-fit text-center ${
+                      isActive ? "underline underline-offset-2" : ""
+                    }`
+                  }
+                >
+                  My Orders
+                </NavLink>
+              </div>
+            </nav>
+          ) : (
+            <View className="ml-4 flex flex-col">
+              <Text className="text-lg font-bold">{name}</Text>
+              {!isFocused && (
+                <FaSearch className="absolute text-gray-500 bottom-3 left-12 transition-all duration-1000" />
+              )}
+              <TextInput
+                type="text"
+                placeholder="Search..."
+                className=" p-1 pl-7 w-56 text-black rounded-md focus:outline-none focus:ring-0"
+                onFocus={handleFocus}
+                onBlur={handleBlur}
+              />
+            </View>
+          )}
         </View>
         <View className="text-xl relative bottom-4 right-2">
-          <FaBell />
+          <Link to="/notifications">
+            <FaBell />
+          </Link>
         </View>
       </View>
 
@@ -62,14 +112,14 @@ const NavBar = ({name, back,isHome}) => {
         } transition-transform duration-300`}
         style={{ width: "75%" }} // Adjust width to cover 3/4 of the screen
       >
-        <ul className="space-y-4 mt-14">
+        <ul className="space-y-4 mt-14 ">
           <li className="flex items-center">
             <IoPerson className="mr-3" />
             <Link to="/profile" className="hover:underline">
               +91 -xxxxxxxxxx
             </Link>
-            <Link to='/edit'>
-            <AiFillEdit className="mr-3 ml-5 text-xl" />
+            <Link to="/edit">
+              <AiFillEdit className="mr-3 ml-5 text-xl" />
             </Link>
           </li>
           <li className="flex items-center">
@@ -98,7 +148,7 @@ const NavBar = ({name, back,isHome}) => {
           </li>
           <li className="flex items-center">
             <FaBox className="mr-3" />
-            <Link to="/orders" className="hover:underline">
+            <Link to="/myorders" className="hover:underline">
               My Orders
             </Link>
           </li>
@@ -110,7 +160,7 @@ const NavBar = ({name, back,isHome}) => {
           </li>
           <li className="flex items-center">
             <FaShoppingCart className="mr-3" />
-            <Link to='/shopping' className="hover:underline">
+            <Link to="/shopping" className="hover:underline">
               Shopping
             </Link>
           </li>

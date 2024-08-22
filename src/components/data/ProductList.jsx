@@ -24,7 +24,7 @@ const products = [
   },
   { 
     id: 3, 
-    name: 'Water Heater & Geyser', 
+    name: 'Water Heater', 
     description: 'Efficient water heater and geyser, providing instant hot water.', 
     price: '$199.99', 
     image: wh,

@@ -7,7 +7,7 @@ import NavBar from '../components/Navbar';
 const PaymentsDetailsPage = () => {
   return (
     <>
-      <NavBar name={"Payment Details"} back={"chats"} />
+      <NavBar name={"Payment Details"} back={"payments"} />
       <View className="p-4 mt-16">
         {/* Header Section */}
         <View className="bg-white shadow-md rounded-lg p-4 mb-2 flex items-center">
@@ -61,7 +61,7 @@ const PaymentsDetailsPage = () => {
             Get PDF Receipt
           </Link>
           <Link
-            to="/chats"
+            to="/messages"
             className="w-full p-3 bg-green-400 text-white text-center rounded-lg shadow hover:bg-gray-600"
           >
             Back to Chats

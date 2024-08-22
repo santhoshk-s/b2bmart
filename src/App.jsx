@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import {Route, Routes } from 'react-router-dom';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import Register from './pages/Register';
@@ -19,6 +19,9 @@ import Chat from './pages/Chat';
 import Payments from './pages/Payments';
 import PaymentsDetailsPage from './pages/PaymentDetails';
 import { AuthProvider } from './provider/AuthProvider';
+import Notifications from './pages/Notifications';
+import Myorders from './pages/Myorders';
+import Requirements from './pages/Requirements';
 function App() {
   const user = true
 
@@ -45,7 +48,10 @@ function App() {
         <Route path='/edit' element={<EditUser/>} />
         <Route path='/messages' element={<Messages />} />
         <Route path='/payments' element={<Payments />} />
+        <Route path='/notifications' element={<Notifications />} />
         <Route path='/paymentdata' element={<PaymentsDetailsPage />} />
+        <Route path='/myorders' element={<Myorders />} />
+        <Route path='/requirements' element={<Requirements />} />
         <Route path="/messages/:userId" element={<Chat />} />
       
       </Routes>
