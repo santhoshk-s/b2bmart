@@ -15,57 +15,52 @@ import {
   FaSearch,
   FaChevronLeft,
 } from "react-icons/fa";
-import { View } from "./alt/View";
-import { Text } from "./alt/Text";
 import { AiFillEdit } from "react-icons/ai";
 import { IoPerson } from "react-icons/io5";
-import { TextInput } from "./alt/TextInput";
-import { Link } from "react-router-dom";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const NavBar = ({ name, back, isHome, isOrder }) => {
   const [navOpen, setNavOpen] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
+
   const toggleNav = () => {
     setNavOpen(!navOpen);
   };
 
   const handleFocus = () => {
-    setIsFocused(true); // Set state to true when TextInput is focused
+    setIsFocused(true);
   };
 
   const handleBlur = () => {
-    setIsFocused(false); // Set state to false when TextInput loses focus
+    setIsFocused(false);
   };
 
+  const phone = localStorage.getItem("user");
+  const userObject = phone ? JSON.parse(phone) : {};
+  const phonno = userObject.contactNo || "N/A"; // Error handling added
+  const username = userObject.username || "N/A"; // Error handling added
+
   return (
-    <View className="relative">
+    <div className="relative">
       {/* Always Visible Header */}
-      <View className="flex items-center justify-between p-1 bg-green-400 text-white fixed top-0 left-0 right-0 z-10">
-        <View className="flex items-center">
-          <button
-            onClick={toggleNav}
-            className={`text-xl relative bottom-4 left-2`}
-          >
+      <div className="flex items-center justify-between p-1 bg-green-400 text-white fixed top-0 left-0 right-0 z-10">
+        <div className="flex items-center">
+          <button onClick={toggleNav} className="text-xl relative bottom-4 left-2">
             {navOpen ? <FaTimes /> : <FaBars />}
           </button>
-          {isHome ? (
-            ""
-          ) : (
+          {isHome ? null : (
             <Link to={`/${back}`}>
-              <FaChevronLeft className="absolute z-50  top-10 left-3" />
+              <FaChevronLeft className="absolute z-50 top-10 left-3" />
             </Link>
           )}
           {isOrder ? (
             <nav className="bg-green-400 w-auto text-white h-16">
               <h1 className="font-bold relative left-4 text-lg">My orders</h1>
-              <div className="relative right-4 flex items-center justify-between font-bold h-full w-svw">
+              <div className="relative right-4 flex items-center justify-between font-bold h-full">
                 <NavLink
                   to="/requirements"
                   className={({ isActive }) =>
-                    `relative py-2 mb-2 pl-10 text-center ${
-                      isActive ? "underline underline-offset-2" : ""
-                    }`
+                    `relative py-2 mb-2 pl-10 text-center ${isActive ? "underline underline-offset-2" : ""}`
                   }
                 >
                   Requirements
@@ -73,9 +68,7 @@ const NavBar = ({ name, back, isHome, isOrder }) => {
                 <NavLink
                   to="/myorders"
                   className={({ isActive }) =>
-                    `relative py-2 mb-2 pr-14 w-fit text-center ${
-                      isActive ? "underline underline-offset-2" : ""
-                    }`
+                    `relative py-2 mb-2 pr-14 text-center ${isActive ? "underline underline-offset-2" : ""}`
                   }
                 >
                   My Orders
@@ -83,43 +76,43 @@ const NavBar = ({ name, back, isHome, isOrder }) => {
               </div>
             </nav>
           ) : (
-            <View className="ml-4 flex flex-col">
-              <Text className="text-lg font-bold">{name}</Text>
+            <div className="ml-4 flex flex-col">
+              <span className="text-lg font-bold">Hello {username}</span>
               {!isFocused && (
                 <FaSearch className="absolute text-gray-500 bottom-3 left-12 transition-all duration-1000" />
               )}
-              <TextInput
+              <input
                 type="text"
                 placeholder="Search..."
-                className=" p-1 pl-7 w-56 text-black rounded-md focus:outline-none focus:ring-0"
+                className="p-1 pl-7 w-56 text-black rounded-md focus:outline-none focus:ring-0"
                 onFocus={handleFocus}
                 onBlur={handleBlur}
               />
-            </View>
+            </div>
           )}
-        </View>
-        <View className="text-xl relative bottom-4 right-2">
+        </div>
+        <div className="text-xl relative bottom-4 right-2">
           <Link to="/notifications">
             <FaBell />
           </Link>
-        </View>
-      </View>
+        </div>
+      </div>
 
       {/* Navigation Menu */}
-      <View
+      <div
         className={`fixed top-0 left-0 h-full bg-green-400 text-white p-5 transform ${
           navOpen ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300`}
-        style={{ width: "75%" }} // Adjust width to cover 3/4 of the screen
+        style={{ width: "75%" }}
       >
-        <ul className="space-y-4 mt-14 ">
+        <ul className="space-y-4 mt-14">
           <li className="flex items-center">
             <IoPerson className="mr-3" />
             <Link to="/profile" className="hover:underline">
-              +91 -xxxxxxxxxx
+              +91 -{phonno}
             </Link>
             <Link to="/edit">
-              <AiFillEdit className="mr-3 ml-5 text-xl" />
+              <AiFillEdit className="ml-5 text-xl" />
             </Link>
           </li>
           <li className="flex items-center">
@@ -177,8 +170,8 @@ const NavBar = ({ name, back, isHome, isOrder }) => {
             </Link>
           </li>
         </ul>
-      </View>
-    </View>
+      </div>
+    </div>
   );
 };
 
