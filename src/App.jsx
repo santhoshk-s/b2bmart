@@ -22,6 +22,7 @@ import { AuthProvider } from './provider/AuthProvider';
 import Notifications from './pages/Notifications';
 import Myorders from './pages/Myorders';
 import Requirements from './pages/Requirements';
+import Profile from './pages/Profile';
 function App() {
   const user = true
 
@@ -46,6 +47,7 @@ function App() {
         <Route path='/c7' element={<C7/>} />
         <Route path='/c8' element={<C8/>} />
         <Route path='/edit' element={<EditUser/>} />
+        <Route path='/profile' element={<Profile/>} />
         <Route path='/messages' element={<Messages />} />
         <Route path='/payments' element={<Payments />} />
         <Route path='/notifications' element={<Notifications />} />
