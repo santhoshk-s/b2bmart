@@ -3,6 +3,7 @@ import axios from 'axios';
 import { FaChevronLeft,FaCamera } from 'react-icons/fa';
 import { Backend_url } from '../constant';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 export const EditUser = () => {
   const [user, setUser] = useState({
@@ -78,8 +79,12 @@ export const EditUser = () => {
                 'Content-Type': 'multipart/form-data',
             },
         });
-
-        console.log('Profile updated:', response.data);
+        Swal.fire({
+          icon: "success",
+          title: "Profile updated Success",
+          showConfirmButton: false,
+          timer: 1500
+        });
     } catch (error) {
         console.error('Error updating profile:', error.response ? error.response.data : error.message);
     }
@@ -95,7 +100,6 @@ export const EditUser = () => {
         </Link>
         <p className='font-bold text-center text-white text-3xl pt-2'>Edit User</p>
       </div>
-      <img src={user.profile}/>
       <section className="my-auto">
         <div className="lg:w-[80%] md:w-[90%] xs:w-[96%] mx-auto flex gap-4">
           <div className="lg:w-[88%] md:w-[80%] sm:w-[88%] xs:w-full mx-auto shadow-2xl p-4 rounded-xl h-fit self-center">
