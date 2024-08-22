@@ -56,7 +56,7 @@ const NavBar = ({ name, back, isHome, isOrder }) => {
           {isOrder ? (
             <nav className="bg-green-400 w-auto text-white h-16">
               <h1 className="font-bold relative left-4 text-lg">My orders</h1>
-              <div className="relative right-4 flex items-center justify-between font-bold h-full">
+              <div className="relative right-4 flex items-center justify-between font-bold h-full w-svw">
                 <NavLink
                   to="/requirements"
                   className={({ isActive }) =>
