@@ -21,7 +21,9 @@ const NavBar = ({name, back,isHome}) => {
   const handleBlur = () => {
     setIsFocused(false); // Set state to false when TextInput loses focus
   };
-
+const phone=localStorage.getItem('user');
+const userObject=JSON.parse(phone);
+const phonno=userObject.contactNo;
   return (
     <View className="relative">
       {/* Always Visible Header */}
@@ -66,9 +68,9 @@ const NavBar = ({name, back,isHome}) => {
           <li className="flex items-center">
             <IoPerson className="mr-3" />
             <Link to="/profile" className="hover:underline">
-              +91 -xxxxxxxxxx
+              +91 -{phonno}
             </Link>
-            <Link to='/edit'>
+            <Link to='/profile'>
             <AiFillEdit className="mr-3 ml-5 text-xl" />
             </Link>
           </li>

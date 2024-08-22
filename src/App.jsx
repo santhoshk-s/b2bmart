@@ -42,7 +42,7 @@ function App() {
         <Route path='/c6' element={<C6/>} />
         <Route path='/c7' element={<C7/>} />
         <Route path='/c8' element={<C8/>} />
-        <Route path='/edit' element={<EditUser/>} />
+        <Route path='/profile' element={<EditUser/>} />
         <Route path='/messages' element={<Messages />} />
         <Route path='/payments' element={<Payments />} />
         <Route path='/paymentdata' element={<PaymentsDetailsPage />} />
