@@ -85,6 +85,9 @@ export const EditUser = () => {
           showConfirmButton: false,
           timer: 1500
         });
+        const localUser = localStorage.getItem("user");
+        localStorage.setItem('user', JSON.stringify(response?.data.user));
+        console.log('Profile updated:', response.data.user.username);
     } catch (error) {
         console.error('Error updating profile:', error.response ? error.response.data : error.message);
     }
